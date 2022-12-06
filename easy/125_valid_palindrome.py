@@ -9,7 +9,6 @@ class ValidPalindrom:
             return True
 
         without_ws = re.sub(r"(\s+|_)", "",re.sub(r"[^\w+]", "", s.lower()))
-        print(without_ws)
 
         s_len = len(without_ws)
 
