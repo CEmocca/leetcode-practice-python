@@ -70,7 +70,7 @@ class MergeTwoSortedList:
                 list2 = list2.next
             current = current.next
         
-        if list1: # list1 != None or list2 != None
+        if list1: # list1 != None 
            current.next = list1
         else:
             current.next = list2 
