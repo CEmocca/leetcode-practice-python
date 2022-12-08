@@ -1,39 +1,16 @@
 from typing import Optional
 
-class ListNode:
-    def __init__(self, val = 0, next = None) -> None:
-        self.val = val
-        self.next = next
+import sys
+from os.path import dirname, abspath
+dir = dirname(dirname(abspath(__file__)))
+sys.path.append(dir)
+
+from utils.list_node import ListNode
+from utils.list_utils import *
 
 class MergeTwoSortedList:
     def __init__(self) -> None:
         pass
-
-    def create_node_list(self, nums: list[int]) -> ListNode:
-        if (nums == []):
-            return None
-        else:
-            root_node = None
-            list_node = root_node
-            for item in nums:
-                node = ListNode(item)
-                if(list_node == None):
-                    root_node = list_node = node
-                else:
-                    list_node.next = node
-                    list_node = node
-            return root_node
-
-    def print_result(self, results: ListNode) -> None:
-        if (results == None):
-            print([])
-        else:
-            vals = []
-            iter_node = results
-            while(iter_node != None):
-                vals.append(iter_node.val)
-                iter_node = iter_node.next
-            print(vals)
 
     def mergeTwoLists_brute_force(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         merged_result = []
@@ -81,20 +58,20 @@ class MergeTwoSortedList:
 
 def main():
     solution = MergeTwoSortedList()
-    example1 = solution.create_node_list([1,2,4])
-    example2 = solution.create_node_list([1,3,4])
-    example3 = solution.create_node_list([])
-    example4 = solution.create_node_list([0])
-    example5 = solution.create_node_list([1])
-    example6 = solution.create_node_list([2])
-    solution.print_result(example1)
-    solution.print_result(example2)
-    solution.print_result(example3)
-    solution.print_result(example4)
+    example1 = create_node_list([1,2,4])
+    example2 = create_node_list([1,3,4])
+    example3 = create_node_list([])
+    example4 = create_node_list([0])
+    example5 = create_node_list([1])
+    example6 = create_node_list([2])
+    print_result(example1)
+    print_result(example2)
+    print_result(example3)
+    print_result(example4)
     print("--------------- result ---------------")
-    solution.print_result(solution.mergeTwoList_after_look_at_solution(example1, example2))
-    solution.print_result(solution.mergeTwoList_after_look_at_solution(example3, example3))
-    solution.print_result(solution.mergeTwoList_after_look_at_solution(example3, example4))
-    solution.print_result(solution.mergeTwoList_after_look_at_solution(example6, example5))
+    print_result(solution.mergeTwoList_after_look_at_solution(example1, example2))
+    print_result(solution.mergeTwoList_after_look_at_solution(example3, example3))
+    print_result(solution.mergeTwoList_after_look_at_solution(example3, example4))
+    print_result(solution.mergeTwoList_after_look_at_solution(example6, example5))
 
 main()

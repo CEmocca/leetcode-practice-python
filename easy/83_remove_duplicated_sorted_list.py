@@ -1,9 +1,12 @@
 from typing import Optional
 
-class ListNode:
-    def __init__(self, val = 0, next = None) -> None:
-        self.val = val
-        self.next = next
+import sys
+from os.path import dirname, abspath
+dir = dirname(dirname(abspath(__file__)))
+sys.path.append(dir)
+
+from utils.list_node import ListNode
+from utils.list_utils import *
 
 class RemoveDuplicatedSortedList:
     def __init__(self) -> None:
@@ -54,31 +57,5 @@ def main():
     print_result(solution.deleteDuplicates(create_node_list([1,1,2])))
     print_result(solution.deleteDuplicates(create_node_list([1,1,2,3,3])))
     print_result(solution.deleteDuplicates(create_node_list([])))
-
-def create_node_list(nums: list[int]) -> ListNode:
-        if (nums == []):
-            return None
-        else:
-            root_node = None
-            list_node = root_node
-            for item in nums:
-                node = ListNode(item)
-                if(list_node == None):
-                    root_node = list_node = node
-                else:
-                    list_node.next = node
-                    list_node = node
-            return root_node
-
-def print_result(results: ListNode) -> None:
-        if (results == None):
-            print([])
-        else:
-            vals = []
-            iter_node = results
-            while(iter_node != None):
-                vals.append(iter_node.val)
-                iter_node = iter_node.next
-            print(vals)
 
 main()
