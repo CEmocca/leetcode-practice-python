@@ -23,7 +23,7 @@ class RemoveLinkedListElements:
                 previous.next = cur.next
             else:
                 previous.next = cur
-            previous = previous.next
+                previous = previous.next
             cur = cur.next
 
         return result.next
