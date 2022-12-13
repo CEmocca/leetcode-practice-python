@@ -6,6 +6,9 @@ class ValidAnagram:
     def isAnagram(self, s: str, t: str) -> bool:
         anagram_dict = dict()
 
+        if len(s) != len(t):
+            return False
+
         i = 0
         while i < len(s):
             if s[i] in anagram_dict:

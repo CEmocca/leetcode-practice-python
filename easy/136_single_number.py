@@ -19,6 +19,17 @@ class SingleNumber:
             if value == 1:
                 return key
 
+    def singleNumber(self, nums: list[int]) -> int:
+        i = 1
+        missing_number = nums[0]
+        while i < len(nums):
+            missing_number = missing_number ^ nums[i]
+
+            i += 1
+
+        return missing_number
+
+
 
 def main():
     solution = SingleNumber()

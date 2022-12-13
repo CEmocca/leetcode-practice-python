@@ -1,10 +1,11 @@
 from typing import Optional
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+import sys
+from os.path import dirname, abspath
+dir = dirname(dirname(abspath(__file__)))
+sys.path.append(dir)
+
+from utils.tree import TreeNode
 
 class SameTree:
 
