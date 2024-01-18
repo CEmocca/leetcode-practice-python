@@ -22,8 +22,8 @@ class Solution:
 
         return ans
 
-    # time complexity is 
-    # space complexity is 
+    # time complexity is O(N)
+    # space complexity is O(N)
     def num_identical_pairs(self, nums: list[int]) -> int:
         ans = 0
         visited = dict()
