@@ -5,8 +5,8 @@ class Solution:
     def __init__(self):
         pass
 
-    # time complexity is O(N^2)
-    # space complexity is O(1)
+    # time complexity is O(N)
+    # space complexity is O(N)
     def kids_with_candies(self, candies: list[int], extraCandies: int) -> list[bool]:
         max_candy = max(candies)
         
