@@ -26,6 +26,21 @@ class TopKFrequentElelments:
                 break
 
         return result
+    
+    def top_k_frequent_neetcode_2nd(self, nums: list[int], k: int) -> list[int]:
+        have_seen = {}
+        
+        for num in nums:
+            if num in have_seen:
+                have_seen[num] = have_seen[num] + 1
+            else:
+                have_seen[num] = 1
+                
+        ans = []
+        for key, value in have_seen.items():
+            ans.append((value, key))
+            
+        return map(lambda x: x[1], sorted(ans, reverse=True)[:k])
 
 def main():
     solution = TopKFrequentElelments()

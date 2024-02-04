@@ -60,6 +60,25 @@ class ProductOfArrayExceptSelf:
             j -= 1
 
         return result
+    
+    def product_except_self_neetcode_2nd(self, nums: list[int]) -> list[int]:
+        ans = [0] * len(nums)
+        
+        prefix = 1
+        i = 0
+        while i < len(nums):
+            ans[i] = prefix
+            prefix = prefix * nums[i]
+            i += 1
+            
+        j = len(nums) - 1
+        postfix = 1
+        while j >= 0:
+            ans[j] = postfix * ans[j]
+            postfix = postfix * nums[j]
+            j -= 1
+            
+        return ans
 
 def main():
     solution = ProductOfArrayExceptSelf()

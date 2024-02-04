@@ -1,3 +1,5 @@
+from typing import List
+
 class ContainDuplicates:
 
     def __init__(self) -> None:
@@ -43,3 +45,14 @@ class ContainDuplicates:
     
 
         return ret
+    
+    def contains_duplicated_neetcode_2nd_try(self, nums: List[int]) -> bool:
+        have_seen = {}
+        
+        for num in nums:
+            if num in have_seen:
+                return True
+            else:
+                have_seen[num] = 1
+                
+        return False

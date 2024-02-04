@@ -41,6 +41,18 @@ class TwoSum:
                 f_pointer += 1
                 continue
         return result
+    
+    def two_sum_neetcode_2nd_try(self, nums: List[int], target: int) -> List[int]:
+        have_seen = {}
+        
+        for i, num in enumerate(nums):
+            to_find = target - num
+            if to_find in have_seen:
+                return [have_seen[to_find], i]
+            else:
+                have_seen[num] = i
+        
+        # exactly one solution exist
 
 
 

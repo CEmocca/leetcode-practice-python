@@ -29,3 +29,30 @@ class ValidAnagram:
                 return False
 
         return True
+    
+    def is_anagram_neetcode_2nd_try(self, s: str, t: str) -> bool:
+        have_seen = {}
+        
+        for char in s:
+            if char in have_seen:
+                have_seen[char] = have_seen[char] + 1
+            else:
+                have_seen[char] = 1
+                
+        
+        for char in t:
+            if char in have_seen:
+                have_seen[char] = have_seen[char] - 1
+                if have_seen[char] == 0:
+                    del have_seen[char]
+            else:
+                have_seen[char] = 1
+                
+        return len(have_seen) == 0
+    
+solution = ValidAnagram()
+
+print(solution.is_anagram_neetcode_2nd_try("anagram", "nagaram"))
+
+
+print(sorted([(10, 1), (3, 2), (15, 4), (20, 5)], reverse=True)[:2])
