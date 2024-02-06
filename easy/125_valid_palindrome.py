@@ -28,6 +28,25 @@ class ValidPalindrom:
             j += 1
 
         return True
+    
+    def is_palindrome_neetcode_2nd(self, s: str) -> bool:
+        formatted_string = ""
+        
+        for ch in s:
+            if ch.isalnum():
+                formatted_string += ch.lower()
+                
+        i = 0
+        j = len(formatted_string) - 1
+        
+        while i < j:
+            if formatted_string[i] != formatted_string[j]:
+                return False
+            
+            i += 1
+            j -= 1
+            
+        return True
 
 
 def main() -> None:
